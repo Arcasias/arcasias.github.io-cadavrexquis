@@ -75,7 +75,7 @@ const list = {
 			text : 'est tombé</e> dans l\'égout',
 		},
 		{
-			text : 'à disparu',
+			text : 'a disparu',
 		},
 		{
 			text : 'à vendre au plus offrant',
