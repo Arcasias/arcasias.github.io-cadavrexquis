@@ -275,7 +275,7 @@ const list = {
 			text : 'd\'où il manque 6 pièces',
 		},
 		{
-			text : 'très noci<f:ve>',
+			text : 'très noci<f/ve>',
 		},
 		{
 			text : 'en état de décomposition',
