@@ -299,19 +299,19 @@ const list = {
 			text : 'qui ne coûte que 5 francs',
 		},
 		{
-			text : 'blanc</he> avec des poids rouges',
+			text : 'blanc</he> avec des pois rouges',
 		},
 	],
 }
 
-getRandomSentence();
 
-$( document ).on( 'click', '#new-sentence', getRandomSentence );
 
-function randArray( array ) {
+$( document ).ready( function() {
 
-	return array[ Math.floor( Math.random() * array.length ) ];
-}
+	getRandomSentence();
+
+	$( document ).on( 'click', '#new-sentence', getRandomSentence );
+} );
 
 function getRandomSentence() {
 
@@ -327,17 +327,25 @@ function getRandomSentence() {
 	let headFirst = sentence.head.text.slice( 0, 1 );
 	sentence.head.text = headFirst.toUpperCase() + sentence.head.text.slice( 1 );
 
+	let isMale = ( 'm' === sentence.subject.gender );
+
 	Object.keys( sentence ).forEach( part => {
 
 		sentence[ part ].text = sentence[ part ].text.replace( /<[a-z]*\/[a-z]*>/g, x => {
 
 			let exp = x.slice( 1, -1 ).split( '/' );
 
-			return 'm' === sentence.subject.gender ? exp[0] : exp[1];
+			return ( isMale ? exp[0] : exp[1] );
 		} );
 	} )
 
-	$( '#head' ).html( sentence.head.text + ' :' );
+	// Displaying
+	$( '#head' ).html( sentence.head.text );
 	$( '#subject' ).html( sentence.subject.text );
 	$( '#end' ).html( sentence.end.text );	
+}
+
+function randArray( array ) {
+
+	return array[ Math.floor( Math.random() * array.length ) ];
 }
