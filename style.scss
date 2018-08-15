@@ -55,25 +55,25 @@ body {
 			}
 		}
 	}
+}
 
-	.button {
+.button {
 
-		width: 250px;
-		border: none;
-		border-radius: 10px;
-		padding: 20px;
-		color: #f0f0f0;
-		font-size: 30px;
-		font-weight: bold;
-		background-color: #20a020;
-		cursor: pointer;
-		box-shadow: 3px 3px 10px #404040;
-		transition: background-color 0.2s;
+	width: 250px;
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+	color: #f0f0f0;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #20a020;
+	cursor: pointer;
+	box-shadow: 3px 3px 10px #404040;
+	transition: background-color 0.2s;
 
-		&:hover {
+	&:hover {
 
-			background-color: #40c040;
-		}
+		background-color: #40c040;
 	}
 }
 
@@ -87,4 +87,39 @@ body {
 	color: #f0f0f0;
 	background-color: #404040;
 	position: fixed;
+}
+
+@media all and ( max-width: 640px ) {
+
+	html {
+
+		font-size: 30px;
+	}
+
+	.main {
+
+		margin-top: 20px;
+	  	justify-content: initial;
+
+		#sentence {
+
+			box-shadow: none;
+			margin-bottom: 0;
+
+			#head {
+
+				font-size: 35px;
+			}
+		}
+	}
+
+	.button {
+
+		font-size: 20px;		
+	}
+
+	.footer {
+
+		font-size: 12px;
+	}
 }
